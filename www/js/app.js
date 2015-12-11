@@ -1,6 +1,9 @@
 'use strict';
 
-angular.module('ergophobic', ['ionic', 'ionic-material'])
+angular.module('ergophobic', [
+  'ionic',
+  'ionic-material',
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

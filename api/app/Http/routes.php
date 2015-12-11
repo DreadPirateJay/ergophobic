@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function ()
+{
+  dd(\Auth::onceBasic());
+});
+
+Route::group(['prefix' => 'api/v1', 'middleware' => 'auth.basic.once'], function ()
+{
+
+  Route::resource('employees', 'EmployeesController');
+
 });

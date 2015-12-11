@@ -26,6 +26,7 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.jsFiles, ['inject']);
 });
 
 gulp.task('install', ['git-check'], function() {
@@ -52,7 +53,13 @@ gulp.task('wiredep', function () {
 
   return gulp.src('www/index.html')
     // exclude ionic scss since we're using ionic sass
-    .pipe(wiredep.stream({exclude: ['www/lib/ionic/css']}))
+    .pipe(wiredep.stream({exclude: [
+      'www/lib/ionic/css',
+      'www/lib/angular',
+      'www/lib/angular-animate',
+      'www/lib/angular-sanitize',
+      'www/lib/angular-ui-router'
+    ]}))
     .pipe(gulp.dest('www/'));
 });
 
