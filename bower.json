@@ -1,0 +1,10 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {},
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#master",
+    "ionic-material": "~0.4.2",
+    "robotodraft": "~1.1.0"
+  }
+}
